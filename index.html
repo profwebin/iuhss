@@ -1,1151 +1,362 @@
 <!DOCTYPE html>
-<html lang="ml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IUHSS Parappur - പഠനത്തിന്റെ പുതിയ വാതിൽ</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>IUHSS PARAPPUR - make.school</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social media icons and activity icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script>
-        // JavaScript for mobile navigation toggle and scroll-to-top
-        document.addEventListener('DOMContentLoaded', function () {
-            const navToggle = document.querySelector('.nav-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function () {
-                    navMenu.classList.toggle('active');
-                    this.setAttribute('aria-expanded', navMenu.classList.contains('active'));
-                });
-            }
-
-            // Close nav menu when a link is clicked (for single-page sites)
-            navMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navMenu.classList.contains('active')) {
-                        navMenu.classList.remove('active');
-                        navToggle.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            });
-
-            // Scroll-to-Top Button Functionality
-            const scrollTopBtn = document.getElementById('scrollTopBtn');
-            if (scrollTopBtn) {
-                window.onscroll = function() {
-                    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                        scrollTopBtn.style.display = "block";
-                    } else {
-                        scrollTopBtn.style.display = "none";
-                    }
-                };
-                scrollTopBtn.addEventListener('click', function() {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-
-            // Simple Intersection Observer for fade-in effect on scroll
-            const faders = document.querySelectorAll('.fade-in');
-            const appearOptions = {
-                threshold: 0.3, // When 30% of the element is visible
-                rootMargin: "0px 0px -50px 0px" // Start fade-in a bit earlier
-            };
-            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        return;
-                    } else {
-                        entry.target.classList.add('visible');
-                        appearOnScroll.unobserve(entry.target);
-                    }
-                });
-            }, appearOptions);
-
-            faders.forEach(fader => {
-                appearOnScroll.observe(fader);
-            });
-        });
-    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
 </head>
-<body>
-    <header class="main-header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html" aria-label="IUHSS Parappur Home">
-                    <img src="placeholder-logo.png" alt="IUHSS Parappur Logo" onerror="this.style.display='none';">
-                    <h1>IUHSS പറപ്പൂർ</h1>
-                </a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <i class="fas fa-bars"></i> </button>
-            <nav class="main-nav" aria-label="Main Navigation">
-                <ul class="nav-menu">
-                    <li><a href="#home">ഹോം</a></li>
-                    <li><a href="#about">ഞങ്ങളെക്കുറിച്ച്</a></li>
-                    <li class="dropdown">
-                        <a href="#" aria-haspopup="true" aria-expanded="false">ക്ലാസുകൾ <i class="fas fa-caret-down"></i></a>
-                        <ul class="dropdown-content">
-                            <li><a href="#highschool">ഹൈസ്കൂൾ</a></li>
-                            <li><a href="#highersecondary">ഹയർ സെക്കൻഡറി</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#facilities">സൗകര്യങ്ങൾ</a></li>
-                    <li><a href="#gallery">ഗാലറി</a></li>
-                    <li><a href="#contact">ബന്ധപ്പെടുക</a></li>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="bg-blue-700 text-white shadow-lg py-4 px-6 md:px-10">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-3xl font-bold mb-2 md:mb-0">IUHSS PARAPPUR</h1>
+            <nav>
+                <ul class="flex flex-wrap justify-center space-x-4 md:space-x-8">
+                    <li><a href="#home" class="hover:text-blue-200 transition duration-300">Home</a></li>
+                    <li><a href="#about" class="hover:text-blue-200 transition duration-300">About Us</a></li>
+                    <li><a href="#make-school" class="hover:text-blue-200 transition duration-300 font-semibold border-b-2 border-blue-200 pb-1">make.school</a></li>
+                    <li><a href="#facilities" class="hover:text-blue-200 transition duration-300">Facilities</a></li>
+                    <li><a href="#activities" class="hover:text-blue-200 transition duration-300">Activities</a></li>
+                    <li><a href="#events" class="hover:text-blue-200 transition duration-300">Events</a></li>
+                    <li><a href="#admissions" class="hover:text-blue-200 transition duration-300">Admissions</a></li>
+                    <li><a href="#contact" class="hover:text-blue-200 transition duration-300">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section id="home" class="hero-section">
-            <div class="hero-content fade-in">
-                <h2>അറിവിന്റെ ലോകത്തേക്ക് സ്വാഗതം</h2>
-                <p>IUHSS പറപ്പൂർ - നൂതന വിദ്യാഭ്യാസവും ഉജ്ജ്വല ഭാവിയും.</p>
-                <a href="#about" class="btn primary-btn">കൂടുതൽ അറിയുക <i class="fas fa-arrow-right"></i></a>
+    <!-- Hero Section -->
+    <section id="home" class="bg-blue-600 text-white py-20 px-6 md:px-10 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://placehold.co/1920x1080/0000FF/FFFFFF?text=School+Building');"></div>
+        <div class="relative z-10 container mx-auto">
+            <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-down">
+                Welcome to IUHSS PARAPPUR
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 animate-fade-in-up">
+                Nurturing minds, building futures.
+            </p>
+            <a href="#admissions" class="inline-block bg-white text-blue-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-100 transition duration-300 transform hover:scale-105">
+                Apply Now
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="bg-white p-8 rounded-xl shadow-xl mt-10 container mx-auto">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-8 text-center">About IUHSS PARAPPUR</h2>
+        <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="md:w-1/2">
+                <img src="https://placehold.co/600x400/87CEEB/FFFFFF?text=School+Campus" alt="School Campus" class="rounded-lg shadow-md w-full h-auto object-cover">
             </div>
-        </section>
-
-        <section id="about" class="section container fade-in">
-            <h2>ഞങ്ങളെക്കുറിച്ച്</h2>
-            <div class="about-content">
-                <p>IUHSS പറപ്പൂർ വിദ്യാഭ്യാസ മികവിൽ ഒരു പര്യായമാണ്. ഓരോ വിദ്യാർത്ഥിയുടെയും വ്യക്തിത്വ വികസനത്തിനും അക്കാദമിക ഉന്നതിക്കും ഞങ്ങൾ തുല്യ പ്രാധാന്യം നൽകുന്നു. ആധുനിക പഠനരീതികളിലൂടെയും പരിചയസമ്പന്നരായ അധ്യാപകരിലൂടെയും ഞങ്ങൾ പുതിയ തലമുറയെ വാർത്തെടുക്കുന്നു.</p>
-                <p>എട്ടാം ക്ലാസ്സ് മുതൽ പ്ലസ് ടു വരെയുള്ള പഠനത്തിന് ഇവിടെ മികച്ച സൗകര്യങ്ങളുണ്ട്. പഠനത്തോടൊപ്പം കലാ, കായിക, സാമൂഹിക മേഖലകളിലും വിദ്യാർത്ഥികൾക്ക് വളരാനുള്ള അവസരങ്ങൾ ഞങ്ങൾ ഒരുക്കുന്നു.</p>
+            <div class="md:w-1/2 text-gray-700 text-lg leading-relaxed">
+                <p class="mb-4">
+                    IUHSS PARAPPUR is dedicated to providing a holistic educational experience that fosters academic excellence, critical thinking, and personal growth. Our mission is to empower students to become responsible global citizens.
+                </p>
+                <p>
+                    With a rich history of nurturing talent and a forward-thinking approach to education, we offer a vibrant learning environment supported by experienced faculty and state-of-the-art facilities.
+                </p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="classes" class="section container fade-in">
-            <h2>ഞങ്ങളുടെ ക്ലാസുകൾ</h2>
+    <!-- make.school Section (Existing, with updated school name and images) -->
+    <main class="flex-grow container mx-auto p-6 md:p-10">
+        <section id="make-school" class="bg-white p-8 rounded-xl shadow-xl">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-8 text-center">make.school: Academic Programs at IUHSS PARAPPUR</h2>
+            <p class="text-lg text-gray-700 mb-10 text-center max-w-3xl mx-auto">
+                Discover our comprehensive academic programs designed to foster intellectual growth and prepare students for future success.
+            </p>
 
-            <div id="highschool" class="class-section fade-in">
-                <h3><i class="fas fa-school"></i> ഹൈസ്കൂൾ വിഭാഗം</h3>
-                <p><strong>ക്ലാസുകൾ: 8, 9, 10 (ഇംഗ്ലീഷ് മീഡിയം)</strong></p>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> ആധുനിക ഡിജിറ്റൽ ക്ലാസ് മുറികൾ.</li>
-                    <li><i class="fas fa-check-circle"></i> വിഷയങ്ങളിൽ ആഴത്തിലുള്ള പഠനം ഉറപ്പാക്കുന്നു.</li>
-                    <li><i class="fas fa-check-circle"></i> വ്യക്തിഗത ശ്രദ്ധയും പഠന പിന്തുണയും.</li>
-                    <li><i class="fas fa-check-circle"></i> പാഠ്യേതര പ്രവർത്തനങ്ങളിലൂടെ സമഗ്ര വികസനം.</li>
-                </ul>
-            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-            <div id="highersecondary" class="class-section fade-in">
-                <h3><i class="fas fa-university"></i> ഹയർ സെക്കൻഡറി വിഭാഗം (+1, +2)</h3>
-                <p>ഉന്നത പഠനത്തിന് വിദ്യാർത്ഥികളെ പ്രാപ്തരാക്കുന്ന സമഗ്രമായ കോഴ്സുകൾ:</p>
-                <div class="course-list">
-                    <div class="course-card fade-in">
-                        <h4><i class="fas fa-chart-line"></i> കൊമേഴ്സ്</h4>
-                        <p>അക്കൗണ്ടൻസി, ബിസിനസ് സ്റ്റഡീസ്, ഇക്കണോമിക്സ്, കമ്പ്യൂട്ടർ ആപ്ലിക്കേഷൻ/മാത്‍സ് എന്നിവയിൽ സാമ്പത്തിക ലോകത്തെ അടുത്തറിയാനുള്ള അവസരം.</p>
-                    </div>
-                    <div class="course-card fade-in">
-                        <h4><i class="fas fa-flask"></i> സയൻസ്</h4>
-                        <p>ഫിസിക്സ്, കെമിസ്ട്രി, ബയോളജി, മാത്തമാറ്റിക്സ്/കമ്പ്യൂട്ടർ സയൻസ് എന്നിവയിലൂടെ ശാസ്ത്ര ലോകത്തേക്ക് ഒരു ചുവട്. മെഡിക്കൽ, എഞ്ചിനീയറിംഗ് പ്രവേശനത്തിന് ഒരുങ്ങാം.</p>
-                    </div>
-                    <div class="course-card fade-in">
-                        <h4><i class="fas fa-users"></i> ഹ്യുമാനിറ്റീസ്</h4>
-                        <p>ഹിസ്റ്ററി, ഇക്കണോമിക്സ്, പൊളിറ്റിക്കൽ സയൻസ്, സോഷ്യോളജി/കമ്പ്യൂട്ടർ ആപ്ലിക്കേഷൻ എന്നിവയിലൂടെ സാമൂഹിക ശാസ്ത്രങ്ങളിൽ ആഴത്തിലുള്ള അറിവ് നേടാം.</p>
-                    </div>
+                <!-- High School Section -->
+                <div class="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                    <img src="https://placehold.co/600x350/3498db/ffffff?text=High+School+Students" alt="High School Students" class="rounded-lg mb-6 w-full h-auto object-cover">
+                    <h3 class="text-3xl font-bold mb-6 flex items-center">
+                        <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        High School
+                    </h3>
+                    <p class="text-blue-100 mb-6">Building a strong foundation for academic excellence and personal development.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center bg-blue-600 rounded-lg p-3 shadow-md">
+                            <svg class="w-6 h-6 mr-3 text-blue-200" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-lg font-medium">Class 8</span>
+                        </li>
+                        <li class="flex items-center bg-blue-600 rounded-lg p-3 shadow-md">
+                            <svg class="w-6 h-6 mr-3 text-blue-200" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-lg font-medium">Class 9</span>
+                        </li>
+                        <li class="flex items-center bg-blue-600 rounded-lg p-3 shadow-md">
+                            <svg class="w-6 h-6 mr-3 text-blue-200" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-lg font-medium">Class 10</span>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </section>
 
-        <section id="facilities" class="section container fade-in">
-            <h2>പ്രധാന സൗകര്യങ്ങൾ</h2>
-            <div class="facilities-grid">
-                <div class="facility-item fade-in">
-                    <i class="fas fa-book-open"></i>
-                    <h3>വിശാലമായ ലൈബ്രറി</h3>
-                    <p>വിവിധ പുസ്തകങ്ങളുടെയും ഡിജിറ്റൽ ഉറവിടങ്ങളുടെയും വലിയ ശേഖരം.</p>
+                <!-- Higher Secondary Section -->
+                <div class="bg-gradient-to-br from-purple-500 to-purple-700 text-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                    <img src="https://placehold.co/600x350/9b59b6/ffffff?text=Higher+Secondary+Students" alt="Higher Secondary Students" class="rounded-lg mb-6 w-full h-auto object-cover">
+                    <h3 class="text-3xl font-bold mb-6 flex items-center">
+                        <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2-1.343-2-3-2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18s-6 2-9 2v-2c0-2 3-4 3-4s3-2 6-2 6 2 6 2 3 2 3 4v2c-3 0-9-2-9-2z"></path></svg>
+                        Higher Secondary
+                    </h3>
+                    <p class="text-purple-100 mb-6">Specialized streams to prepare students for university and professional careers.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center bg-purple-600 rounded-lg p-3 shadow-md">
+                            <svg class="w-6 h-6 mr-3 text-purple-200" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-lg font-medium">Science Stream</span>
+                        </li>
+                        <li class="flex items-center bg-purple-600 rounded-lg p-3 shadow-md">
+                            <svg class="w-6 h-6 mr-3 text-purple-200" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-lg font-medium">Commerce Stream</span>
+                        </li>
+                        <li class="flex items-center bg-purple-600 rounded-lg p-3 shadow-md">
+                            <svg class="w-6 h-6 mr-3 text-purple-200" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-lg font-medium">Humanities Stream</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="facility-item fade-in">
-                    <i class="fas fa-microscope"></i>
-                    <h3>നൂതന ലാബുകൾ</h3>
-                    <p>ശാസ്ത്ര പഠനത്തിനായി അത്യാധുനിക സജ്ജീകരണങ്ങളുള്ള ലാബുകൾ.</p>
-                </div>
-                <div class="facility-item fade-in">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>കമ്പ്യൂട്ടർ ലാബ്</h3>
-                    <p>വേഗതയേറിയ ഇന്റർനെറ്റോടുകൂടിയ ആധുനിക കമ്പ്യൂട്ടറുകൾ.</p>
-                </div>
-                <div class="facility-item fade-in">
-                    <i class="fas fa-futbol"></i>
-                    <h3>കളിക്കളങ്ങൾ</h3>
-                    <p>കായിക പരിശീലനത്തിനായി വിശാലമായ ഫുട്ബോൾ, വോളിബോൾ കോർട്ടുകൾ.</p>
-                </div>
-                <div class="facility-item fade-in">
-                    <i class="fas fa-headset"></i>
-                    <h3>ഭാഷാ ലാബ്</h3>
-                    <p>ആശയവിനിമയ ശേഷി വർദ്ധിപ്പിക്കാൻ സഹായിക്കുന്ന ആധുനിക ഭാഷാ ലാബ്.</p>
-                </div>
-                <div class="facility-item fade-in">
-                    <i class="fas fa-bus"></i>
-                    <h3>വാഹന സൗകര്യം</h3>
-                    <p>വിദ്യാർത്ഥികൾക്കായി സുരക്ഷിതമായ സ്കൂൾ ബസ് സർവീസ്.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="gallery" class="section container fade-in">
-            <h2>ഗാലറി</h2>
-            <div class="gallery-grid">
-                <img src="placeholder-image1.jpg" alt="സ്കൂൾ വാർഷിക പരിപാടി">
-                <img src="placeholder-image2.jpg" alt="സ്കൂൾ കെട്ടിടം പുറമെനിന്ന്">
-                <img src="placeholder-image3.jpg" alt="ലാബിലെ വിദ്യാർത്ഥികൾ">
-                <img src="placeholder-image4.jpg" alt="കായിക ദിനാഘോഷം">
-                <img src="placeholder-image5.jpg" alt="ക്ലാസ് മുറിയിലെ പഠനം">
-                <img src="placeholder-image6.jpg" alt="ഗ്രന്ഥശാലയിലെ വിദ്യാർത്ഥികൾ">
-                <img src="placeholder-image7.jpg" alt="ആർട്ട് ഫെസ്റ്റ്">
-                <img src="placeholder-image8.jpg" alt="ശാസ്ത്ര മേള">
-            </div>
-        </section>
-
-        <section id="contact" class="section container fade-in">
-            <h2>ബന്ധപ്പെടുക</h2>
-            <p><strong>IUHSS പറപ്പൂർ</strong></p>
-            <p><i class="fas fa-map-marker-alt"></i> വിലാസം: പറപ്പൂർ, മലപ്പുറം ജില്ല, കേരളം, ഇന്ത്യ - 673639</p>
-            <p><i class="fas fa-phone-alt"></i> ഫോൺ: <a href="tel:+919876543210">+91 98765 43210</a></p>
-            <p><i class="fas fa-envelope"></i> ഇമെയിൽ: <a href="mailto:info@iuhssparappur.edu">info@iuhssparappur.edu</a></p>
-            
-            <div class="contact-form-container">
-                <h3>നിങ്ങളുടെ സംശയങ്ങൾ ചോദിക്കൂ</h3>
-                <form class="contact-form">
-                    <input type="text" placeholder="നിങ്ങളുടെ പേര്" aria-label="നിങ്ങളുടെ പേര്" required>
-                    <input type="email" placeholder="നിങ്ങളുടെ ഇമെയിൽ" aria-label="നിങ്ങളുടെ ഇമെയിൽ" required>
-                    <input type="tel" placeholder="നിങ്ങളുടെ ഫോൺ നമ്പർ (ഓപ്ഷണൽ)" aria-label="നിങ്ങളുടെ ഫോൺ നമ്പർ">
-                    <textarea placeholder="നിങ്ങളുടെ സന്ദേശം" rows="6" aria-label="നിങ്ങളുടെ സന്ദേശം" required></textarea>
-                    <button type="submit" class="btn primary-btn">സന്ദേശം അയക്കുക <i class="fas fa-paper-plane"></i></button>
-                </form>
             </div>
         </section>
     </main>
 
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2024 IUHSS പറപ്പൂർ. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം. <span class="footer-tagline">വിദ്യാഭ്യാസത്തിന്റെ ഉന്നതിയിലേക്ക്.</span></p>
-            <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <!-- Facilities Section -->
+    <section id="facilities" class="bg-blue-100 p-8 rounded-xl shadow-xl mt-10 container mx-auto">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-8 text-center">Our Facilities</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <i class="fas fa-flask text-blue-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Modern Labs</h3>
+                <p class="text-gray-700">Well-equipped science and computer labs for practical learning.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <i class="fas fa-book-open text-blue-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Extensive Library</h3>
+                <p class="text-gray-700">A vast collection of books and digital resources.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <i class="fas fa-futbol text-blue-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Sports Complex</h3>
+                <p class="text-gray-700">Facilities for various indoor and outdoor sports.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <i class="fas fa-bus text-blue-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Transportation</h3>
+                <p class="text-gray-700">Safe and reliable transport services for students.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <i class="fas fa-wifi text-blue-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Wi-Fi Campus</h3>
+                <p class="text-gray-700">High-speed internet access throughout the campus.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <i class="fas fa-utensils text-blue-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Cafeteria</h3>
+                <p class="text-gray-700">Nutritious and delicious meals available for students and staff.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Activities & Games Section -->
+    <section id="activities" class="bg-purple-100 p-8 rounded-xl shadow-xl mt-10 container mx-auto">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-8 text-center">School Activities & Games</h2>
+        <p class="text-lg text-gray-700 mb-10 text-center max-w-3xl mx-auto">
+            At IUHSS PARAPPUR, we believe in holistic development. Our wide range of extracurricular activities and sports programs help students discover their talents and build essential life skills.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <img src="https://placehold.co/400x250/FF6347/FFFFFF?text=Art+Class" alt="Art Class" class="rounded-md mb-4 w-full h-auto object-cover">
+                <i class="fas fa-palette text-purple-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Art & Craft Club</h3>
+                <p class="text-gray-700">Unleash creativity through painting, sculpture, and various crafts.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <img src="https://placehold.co/400x250/4682B4/FFFFFF?text=Music+Class" alt="Music Class" class="rounded-md mb-4 w-full h-auto object-cover">
+                <i class="fas fa-music text-purple-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Music & Dance</h3>
+                <p class="text-gray-700">Learn musical instruments, vocal training, and various dance forms.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <img src="https://placehold.co/400x250/20B2AA/FFFFFF?text=Drama+Club" alt="Drama Club" class="rounded-md mb-4 w-full h-auto object-cover">
+                <i class="fas fa-theater-masks text-purple-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Drama Club</h3>
+                <p class="text-gray-700">Develop acting skills and stage presence through theatrical productions.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <img src="https://placehold.co/400x250/DDA0DD/000000?text=Chess+Game" alt="Chess Game" class="rounded-md mb-4 w-full h-auto object-cover">
+                <i class="fas fa-chess-knight text-purple-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Chess Club</h3>
+                <p class="text-gray-700">Sharpen strategic thinking and problem-solving abilities.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <img src="https://placehold.co/400x250/FFD700/000000?text=Basketball+Court" alt="Basketball Court" class="rounded-md mb-4 w-full h-auto object-cover">
+                <i class="fas fa-basketball-ball text-purple-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Basketball</h3>
+                <p class="text-gray-700">Teamwork and physical fitness on the court.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <img src="https://placehold.co/400x250/8A2BE2/FFFFFF?text=Table+Tennis" alt="Table Tennis" class="rounded-md mb-4 w-full h-auto object-cover">
+                <i class="fas fa-table-tennis text-purple-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Table Tennis</h3>
+                <p class="text-gray-700">Improve reflexes and hand-eye coordination.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <img src="https://placehold.co/400x250/32CD32/000000?text=Eco+Club" alt="Eco Club" class="rounded-md mb-4 w-full h-auto object-cover">
+                <i class="fas fa-leaf text-purple-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Eco Club</h3>
+                <p class="text-gray-700">Promoting environmental awareness and sustainability.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+                <img src="https://placehold.co/400x250/FF4500/FFFFFF?text=Robotics+Lab" alt="Robotics Lab" class="rounded-md mb-4 w-full h-auto object-cover">
+                <i class="fas fa-robot text-purple-600 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Robotics Club</h3>
+                <p class="text-gray-700">Exploring engineering and programming through robotics.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events/News Section -->
+    <section id="events" class="bg-white p-8 rounded-xl shadow-xl mt-10 container mx-auto">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-8 text-center">Latest Events & News</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <img src="https://placehold.co/400x250/FFD700/000000?text=Annual+Day" alt="Annual Day" class="rounded-md mb-4 w-full h-auto object-cover">
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Annual Day Celebration 2025</h3>
+                <p class="text-gray-600 text-sm mb-3">Date: March 15, 2025</p>
+                <p class="text-gray-700">Our annual day was a grand success, showcasing student talent in various performances.</p>
+                <a href="#" class="text-blue-600 hover:underline mt-3 inline-block">Read More &rarr;</a>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <img src="https://placehold.co/400x250/90EE90/000000?text=Science+Fair" alt="Science Fair" class="rounded-md mb-4 w-full h-auto object-cover">
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Science Fair Innovation</h3>
+                <p class="text-gray-600 text-sm mb-3">Date: February 28, 2025</p>
+                <p class="text-gray-700">Students presented innovative projects at the inter-school science fair.</p>
+                <a href="#" class="text-blue-600 hover:underline mt-3 inline-block">Read More &rarr;</a>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <img src="https://placehold.co/400x250/ADD8E6/000000?text=Sports+Meet" alt="Sports Meet" class="rounded-md mb-4 w-full h-auto object-cover">
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Sports Meet Highlights</h3>
+                <p class="text-gray-600 text-sm mb-3">Date: January 20, 2025</p>
+                <p class="text-gray-700">Our annual sports meet saw enthusiastic participation and new records.</p>
+                <a href="#" class="text-blue-600 hover:underline mt-3 inline-block">Read More &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-blue-700 text-white py-16 px-6 md:px-10 mt-10">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-extrabold mb-8">What Our Community Says</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-blue-800 p-6 rounded-lg shadow-md">
+                    <p class="italic text-blue-100 mb-4">"IUHSS PARAPPUR has provided my child with an exceptional learning environment. The teachers are dedicated and truly care about student success."</p>
+                    <p class="font-semibold">- Parent of Class 9 Student</p>
                 </div>
+                <div class="bg-blue-800 p-6 rounded-lg shadow-md">
+                    <p class="italic text-blue-100 mb-4">"The make.school program helped me discover my passion for science. The guidance I received was invaluable for my university applications."</p>
+                    <p class="font-semibold">- Alumni, Science Stream</p>
+                </div>
+                <div class="bg-blue-800 p-6 rounded-lg shadow-md">
+                    <p class="italic text-blue-100 mb-4">"I love the vibrant campus life and the variety of extracurricular activities available. It's truly a place where you can grow."</p>
+                    <p class="font-semibold">- Current Class 10 Student</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section id="admissions" class="bg-white p-8 rounded-xl shadow-xl mt-10 container mx-auto">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-8 text-center">Admissions</h2>
+        <div class="text-lg text-gray-700 max-w-3xl mx-auto text-center">
+            <p class="mb-4">
+                Admissions for the upcoming academic year are now open! We invite prospective students and parents to explore our programs and facilities.
+            </p>
+            <p class="mb-6">
+                Please visit our school office or contact us for more details on the admission process, eligibility criteria, and required documents.
+            </p>
+            <a href="#contact" class="inline-block bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-800 transition duration-300 transform hover:scale-105">
+                Contact Admissions
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-100 p-8 rounded-xl shadow-xl mt-10 container mx-auto mb-10">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-8 text-center">Contact Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">Get in Touch</h3>
+                <p class="text-gray-700 mb-2"><i class="fas fa-map-marker-alt mr-2 text-blue-600"></i> IUHSS PARAPPUR, [Your School Address Here], India</p>
+                <p class="text-gray-700 mb-2"><i class="fas fa-phone mr-2 text-blue-600"></i> +91 123 456 7890</p>
+                <p class="text-gray-700 mb-2"><i class="fas fa-envelope mr-2 text-blue-600"></i> info@iuhssparappur.edu</p>
+                <p class="text-gray-700"><i class="fas fa-globe mr-2 text-blue-600"></i> www.iuhssparappur.edu</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">Send Us a Message</h3>
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline transition duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-6 px-6 md:px-10">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 IUHSS PARAPPUR. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="hover:text-gray-400 transition duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-400 transition duration-300">Terms of Service</a>
+            </div>
+            <div class="flex justify-center space-x-6 mt-4 text-2xl">
+                <a href="#" class="hover:text-blue-400 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-blue-400 transition duration-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-blue-400 transition duration-300"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-blue-400 transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
     </footer>
 
-    <button id="scrollTopBtn" class="scroll-to-top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
-<style>
-  /* CSS Variables for easier theme management */
-:root {
-    --primary-color: #FFC107; /* Vibrant Yellow/Amber */
-    --secondary-color: #FF5722; /* Bright Orange */
-    --accent-color: #4CAF50; /* Green accent for certain elements */
-    --dark-text: #333;
-    --light-text: #666;
-    --white: #fff;
-    --light-gray: #f8f8f8;
-    --medium-gray: #e0e0e0;
-    --dark-gray: #424242; /* For footer and stronger elements */
-
-    --heading-font: 'Poppins', sans-serif;
-    --body-font: 'Noto Sans Malayalam', 'Poppins', sans-serif;
-
-    --shadow-light: 0 4px 12px rgba(0,0,0,0.08);
-    --shadow-medium: 0 8px 20px rgba(0,0,0,0.15);
-    --transition-speed: 0.4s ease-in-out;
-}
-
-/* Basic Reset & Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: var(--body-font);
-    line-height: 1.7; /* Slightly more line height for readability */
-    color: var(--dark-text);
-    background-color: var(--light-gray);
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 30px; /* Increased padding for more breathing room */
-}
-
-a {
-    color: var(--secondary-color); /* Links use secondary color */
-    text-decoration: none;
-    transition: color var(--transition-speed);
-}
-
-a:hover {
-    color: #e64a19; /* Darker orange on hover */
-}
-
-ul {
-    list-style: none;
-}
-
-h1, h2, h3, h4 {
-    font-family: var(--heading-font);
-    color: var(--dark-gray);
-    margin-bottom: 20px;
-}
-
-.btn {
-    display: inline-flex; /* Use flex for icon alignment */
-    align-items: center;
-    gap: 8px; /* Space between text and icon */
-    padding: 15px 35px; /* More generous padding */
-    border-radius: 50px; /* Pill shape */
-    transition: background-color var(--transition-speed), transform 0.3s ease, box-shadow var(--transition-speed);
-    margin-top: 25px;
-    font-size: 1.1em;
-    border: none;
-    cursor: pointer;
-    font-weight: 600; /* Poppins semi-bold */
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}
-
-.btn.primary-btn {
-    background-color: var(--primary-color);
-    color: var(--dark-gray); /* Dark text on bright button */
-}
-
-.btn.primary-btn:hover {
-    background-color: #ffb300; /* Slightly darker yellow */
-    transform: translateY(-5px); /* More noticeable lift */
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-}
-
-/* Header */
-.main-header {
-    background-color: var(--dark-gray); /* Darker header */
-    color: var(--white);
-    padding: 20px 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.main-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.main-header .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.main-header .logo img {
-    height: 70px; /* Larger logo */
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--primary-color); /* Yellow border around logo */
-    box-shadow: 0 0 0 5px rgba(255,193,7,0.2); /* Subtle glow */
-}
-
-.main-header .logo h1 {
-    color: var(--white);
-    margin: 0;
-    font-size: 2.2em; /* Larger school name */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    font-weight: 700;
-}
-
-/* Navigation */
-.main-nav .nav-menu {
-    display: flex;
-    align-items: center;
-}
-
-.main-nav .nav-menu li {
-    margin-left: 40px; /* More space */
-    position: relative;
-}
-
-.main-nav .nav-menu a {
-    color: var(--white);
-    font-weight: 600;
-    padding: 10px 0;
-    position: relative;
-    transition: color var(--transition-speed), transform 0.2s ease;
-}
-
-.main-nav .nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px; /* Position slightly below text */
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background-color: var(--primary-color); /* Yellow underline */
-    transition: width var(--transition-speed);
-}
-
-.main-nav .nav-menu a:hover::after {
-    width: 100%;
-}
-
-.main-nav .nav-menu a:hover {
-    color: var(--primary-color); /* Yellow on hover */
-    transform: translateY(-3px);
-}
-
-/* Dropdown Menu */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--dark-gray); /* Dark dropdown background */
-    min-width: 220px;
-    box-shadow: var(--shadow-medium);
-    z-index: 1;
-    border-radius: 8px;
-    top: calc(100% + 15px);
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity var(--transition-speed), transform var(--transition-speed), visibility var(--transition-speed);
-}
-
-.dropdown-content li {
-    margin: 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08); /* Fainter separator */
-}
-.dropdown-content li:last-child {
-    border-bottom: none;
-}
-
-.dropdown-content a {
-    color: var(--white);
-    padding: 15px 25px; /* More padding */
-    display: block;
-    text-align: left;
-    white-space: nowrap;
-    font-weight: 400;
-    transition: background-color var(--transition-speed), padding-left var(--transition-speed);
-}
-
-.dropdown-content a:hover {
-    background-color: #555; /* Slightly lighter gray on hover */
-    padding-left: 30px;
-    color: var(--primary-color); /* Yellow text on hover */
-}
-.dropdown-content a::after {
-    display: none; /* No underline in dropdown */
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Hamburger Toggle (Mobile) */
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--white);
-    font-size: 2.5em;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    outline: none;
-}
-.nav-toggle:focus {
-    outline: 2px solid var(--primary-color); /* Accessibility outline */
-    outline-offset: 3px;
-}
-
-/* Hero Section */
-.hero-section {
-    /* Replace 'placeholder-hero.jpg' with your actual hero image (high-res, optimized) */
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('placeholder-hero.jpg') no-repeat center center/cover;
-    color: var(--white);
-    text-align: center;
-    padding: 150px 20px; /* Generous padding */
-    min-height: 85vh; /* Larger hero section */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-content {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-.hero-content.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.hero-content h2 {
-    font-size: 4.5em; /* Very large heading */
-    margin-bottom: 25px;
-    color: var(--white);
-    text-shadow: 4px 4px 8px rgba(0,0,0,0.7);
-    line-height: 1.2;
-    font-weight: 700;
-}
-
-.hero-content p {
-    font-size: 1.5em;
-    margin-bottom: 40px;
-    max-width: 900px;
-    line-height: 1.6;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    font-weight: 400;
-}
-
-/* Sections */
-.section {
-    padding: 100px 0; /* More vertical padding for sections */
-    background-color: var(--white);
-    margin-bottom: 40px;
-    box-shadow: var(--shadow-light);
-    border-radius: 15px; /* More rounded sections */
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-.section:nth-of-type(even) {
-    background-color: var(--light-gray); /* Alternate background for sections */
-}
-
-.section h2 {
-    text-align: center;
-    font-size: 3.5em; /* Larger section titles */
-    margin-bottom: 70px; /* More space below title */
-    position: relative;
-    color: var(--dark-gray);
-    padding-bottom: 20px;
-}
-
-.section h2::after {
-    content: '';
-    width: 120px; /* Wider underline */
-    height: 6px; /* Thicker underline */
-    background-color: var(--primary-color); /* Yellow underline */
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 3px;
-}
-
-/* About Section */
-.about-content {
-    text-align: justify;
-    font-size: 1.25em; /* Larger text */
-    line-height: 1.8;
-    max-width: 950px;
-    margin: 0 auto;
-}
-
-/* Classes Section */
-.class-section {
-    background-color: var(--white); /* White background for class sections */
-    padding: 50px; /* More padding */
-    border-radius: 15px;
-    margin-bottom: 40px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Stronger shadow */
-    border: 1px solid var(--medium-gray); /* Subtle border */
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-}
-.class-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-}
-
-.class-section:last-of-type {
-    margin-bottom: 0;
-}
-
-.class-section h3 {
-    color: var(--secondary-color); /* Orange for subheadings */
-    font-size: 2.5em; /* Larger subheadings */
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.class-section h3 .fas {
-    font-size: 1.2em; /* Icon size relative to text */
-    color: var(--primary-color); /* Yellow icon */
-}
-
-.class-section p {
-    font-size: 1.15em;
-    margin-bottom: 20px;
-}
-
-.class-section ul {
-    list-style: none; /* Remove default bullets */
-    margin-top: 20px;
-    font-size: 1.1em;
-    line-height: 1.8;
-}
-
-.class-section ul li {
-    margin-bottom: 12px;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
-.class-section ul li .fas {
-    color: var(--accent-color); /* Green checkmark */
-    margin-top: 5px; /* Align icon with text top */
-}
-
-
-.course-list {
-    display: grid; /* Use CSS Grid for flexible layout */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.course-card {
-    background-color: var(--white);
-    border: 1px solid var(--medium-gray);
-    border-radius: 15px;
-    padding: 35px;
-    box-shadow: var(--shadow-light);
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-}
-
-.course-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-medium);
-    border-color: var(--primary-color); /* Yellow border on hover */
-}
-
-.course-card h4 {
-    color: var(--dark-gray);
-    font-size: 2.2em;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-.course-card h4 .fas {
-    color: var(--secondary-color); /* Orange icon in course card */
-    font-size: 1.1em;
-}
-
-.course-card p {
-    font-size: 1.1em;
-    line-height: 1.7;
-    margin-bottom: 0; /* Remove bottom margin from last paragraph in card */
-}
-
-/* Facilities Section */
-.facilities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.facility-item {
-    background-color: var(--white);
-    padding: 40px; /* More padding */
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: var(--shadow-light);
-    transition: transform var(--transition-speed), background-color var(--transition-speed), box-shadow var(--transition-speed);
-    border: 1px solid var(--medium-gray);
-}
-
-.facility-item:hover {
-    transform: translateY(-8px);
-    background-color: var(--light-gray);
-    box-shadow: var(--shadow-medium);
-}
-
-.facility-item .fas {
-    font-size: 3.5em; /* Large icons */
-    color: var(--accent-color); /* Green icons */
-    margin-bottom: 20px;
-    transition: color var(--transition-speed);
-}
-.facility-item:hover .fas {
-    color: var(--secondary-color); /* Orange on hover */
-}
-
-.facility-item h3 {
-    color: var(--dark-gray);
-    font-size: 2.2em;
-    margin-bottom: 15px;
-}
-
-.facility-item p {
-    font-size: 1.1em;
-    color: var(--light-text);
-}
-
-/* Gallery Section */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: var(--shadow-medium); /* Stronger shadow */
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    cursor: pointer;
-    border: 3px solid var(--white); /* White border around images */
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.08); /* More pronounced zoom */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3); /* Even stronger shadow */
-    border-color: var(--primary-color); /* Yellow border on hover */
-}
-
-/* Contact Form */
-.contact-form-container {
-    background-color: var(--white);
-    padding: 50px; /* More padding */
-    border-radius: 15px;
-    box-shadow: var(--shadow-medium);
-    max-width: 800px;
-    margin: 40px auto 0; /* Space from heading */
-    text-align: center;
-}
-.contact-form-container h3 {
-    font-size: 2.5em;
-    color: var(--primary-color); /* Yellow heading */
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 18px; /* More padding */
-    border: 1px solid var(--medium-gray);
-    border-radius: 10px; /* More rounded inputs */
-    font-size: 1.1em;
-    font-family: var(--body-font);
-    width: 100%;
-    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--secondary-color); /* Orange border on focus */
-    box-shadow: 0 0 0 4px rgba(255, 87, 34, 0.25);
-    outline: none;
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 180px;
-}
-
-.contact-form button {
-    width: auto;
-    align-self: center; /* Center the button */
-    margin-top: 20px;
-}
-
-/* Footer */
-.main-footer {
-    background-color: var(--dark-gray);
-    color: var(--white);
-    padding: 60px 0; /* Generous padding */
-    text-align: center;
-    margin-top: 50px;
-    border-top: 5px solid var(--primary-color); /* Yellow top border */
-}
-
-.main-footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-}
-
-.main-footer p {
-    font-size: 1.05em;
-    margin-bottom: 0;
-}
-.footer-tagline {
-    display: block;
-    margin-top: 10px;
-    font-style: italic;
-    color: var(--primary-color); /* Yellow tagline */
-}
-
-.main-footer .social-links {
-    display: flex;
-    gap: 25px; /* More space between icons */
-}
-
-.main-footer .social-links a {
-    color: var(--white); /* White icons */
-    font-size: 1.8em; /* Larger social icons */
-    transition: color var(--transition-speed), transform 0.2s ease;
-}
-
-.main-footer .social-links a:hover {
-    color: var(--primary-color); /* Yellow on hover */
-    transform: scale(1.15);
-}
-
-/* Scroll-to-Top Button */
-.scroll-to-top {
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
-    font-size: 1.8em; /* Slightly smaller icon */
-    border: none;
-    outline: none;
-    background-color: var(--secondary-color); /* Orange button */
-    color: white;
-    cursor: pointer;
-    padding: 18px 22px; /* More padding */
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: background-color var(--transition-speed), transform 0.2s ease;
-}
-.scroll-to-top:hover {
-    background-color: #e64a19; /* Darker orange */
-    transform: translateY(-5px);
-}
-.scroll-to-top .fas {
-    vertical-align: middle; /* Align icon better */
-}
-
-
-/* Responsive Design (Media Queries) */
-@media (max-width: 992px) {
-    .main-header .logo h1 {
-        font-size: 1.8em;
-    }
-    .main-header .logo img {
-        height: 60px;
-    }
-
-    .main-nav .nav-menu li {
-        margin-left: 25px;
-    }
-
-    .hero-content h2 {
-        font-size: 3.5em;
-    }
-    .hero-content p {
-        font-size: 1.1em;
-    }
-
-    .section h2 {
-        font-size: 3em;
-    }
-
-    .class-section h3 {
-        font-size: 2em;
-    }
-
-    .course-card {
-        flex: 1 1 calc(50% - 20px); /* 2 cards per row on tablets */
-        min-width: unset; /* Allow flexibility */
-    }
-
-    .facilities-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 0 20px;
-    }
-
-    .main-header .container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .main-nav {
-        order: 3;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .main-nav .nav-menu {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        text-align: center;
-        background-color: var(--dark-gray);
-        padding: 15px 0;
-        border-radius: 8px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-    }
-
-    .main-nav .nav-menu.active {
-        display: flex;
-    }
-
-    .main-nav .nav-menu li {
-        margin: 10px 0;
-        width: 100%;
-    }
-
-    .main-nav .nav-menu a {
-        padding: 12px;
-        display: block;
-        border-bottom: none;
-        color: var(--white);
-    }
-    .main-nav .nav-menu a::after {
-        display: none;
-    }
-
-    .main-nav .nav-menu a:hover {
-        background-color: #555;
-        color: var(--primary-color);
-        transform: translateY(0);
-    }
-
-    /* Dropdown on mobile */
-    .dropdown-content {
-        position: static;
-        box-shadow: none;
-        background-color: #555; /* Slightly lighter gray for sub-menu */
-        border-radius: 0;
-        margin-top: 5px;
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        width: 100%;
-    }
-
-    .dropdown-content a {
-        padding-left: 40px;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: flex;
-        flex-direction: column;
-    }
-    .dropdown .fas.fa-caret-down { /* Hide dropdown arrow on mobile nav list */
-        display: none;
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
-    .hero-content h2 {
-        font-size: 2.8em;
-    }
-    .hero-content p {
-        font-size: 1em;
-    }
-
-    .section {
-        padding: 60px 0;
-    }
-    .section h2 {
-        font-size: 2.8em;
-        margin-bottom: 40px;
-    }
-
-    .about-content {
-        font-size: 1.1em;
-    }
-
-    .class-section {
-        padding: 30px;
-    }
-    .class-section h3 {
-        font-size: 2em;
-        flex-direction: column; /* Icon and text stack */
-        gap: 10px;
-        text-align: center;
-    }
-    .class-section h3 .fas {
-        margin-bottom: 5px;
-    }
-
-    .course-card {
-        padding: 25px;
-    }
-    .course-card h4 {
-        font-size: 1.8em;
-    }
-
-    .facilities-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-    }
-    .gallery-grid img {
-        height: 220px;
-    }
-
-    .contact-form-container {
-        padding: 30px;
-        margin-top: 30px;
-    }
-    .contact-form-container h3 {
-        font-size: 2em;
-        margin-bottom: 25px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        padding: 15px;
-    }
-
-    .main-footer {
-        padding: 40px 0;
-    }
-    .main-footer .social-links a {
-        font-size: 1.5em;
-    }
-
-    .scroll-to-top {
-        font-size: 1.5em;
-        padding: 15px 18px;
-        bottom: 20px;
-        right: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-header .logo h1 {
-        font-size: 1.6em;
-    }
-    .main-header .logo img {
-        height: 50px;
-    }
-
-    .hero-content h2 {
-        font-size: 2.2em;
-    }
-    .hero-content p {
-        font-size: 0.95em;
-    }
-
-    .btn {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-
-    .section h2 {
-        font-size: 2.2em;
-        margin-bottom: 30px;
-    }
-
-    .about-content {
-        font-size: 1em;
-    }
-
-    .class-section {
-        padding: 20px;
-    }
-    .class-section h3 {
-        font-size: 1.8em;
-        gap: 8px;
-    }
-    .class-section ul li {
-        font-size: 1em;
-    }
-
-    .course-card {
-        padding: 20px;
-    }
-    .course-card h4 {
-        font-size: 1.6em;
-    }
-    .course-card p {
-        font-size: 1em;
-    }
-
-    .facility-item {
-        padding: 25px;
-    }
-    .facility-item .fas {
-        font-size: 3em;
-    }
-    .facility-item h3 {
-        font-size: 1.8em;
-    }
-    .facility-item p {
-        font-size: 1em;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    .gallery-grid img {
-        height: 180px;
-    }
-
-    .contact-form-container {
-        padding: 20px;
-    }
-    .contact-form-container h3 {
-        font-size: 1.8em;
-    }
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 1em;
-        padding: 12px;
-    }
-
-    .main-footer p {
-        font-size: 0.9em;
-    }
-    .main-footer .social-links a {
-        font-size: 1.2em;
-    }
-}
-</style>
 </body>
 </html>
