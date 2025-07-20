@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IUHSS Parappur - പഠന മികവിന്റെ കവാടം</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function () {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="placeholder-logo.png" alt="IUHSS Parappur Logo" style="height: 60px;">
+                    <h1>IUHSS പറപ്പൂർ</h1>
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                &#9776; </button>
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">ഹോം</a></li>
+                    <li><a href="#about">ഞങ്ങളെക്കുറിച്ച്</a></li>
+                    <li class="dropdown">
+                        <a href="#">ക്ലാസുകൾ &#9662;</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#highschool">ഹൈസ്കൂൾ</a></li>
+                            <li><a href="#highersecondary">ഹയർ സെക്കൻഡറി</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#facilities">സൗകര്യങ്ങൾ</a></li>
+                    <li><a href="#gallery">ഗാലറി</a></li>
+                    <li><a href="#contact">ബന്ധപ്പെടുക</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h2>അറിവിന്റെ ലോകത്തേക്ക് സ്വാഗതം</h2>
+                <p>IUHSS പറപ്പൂർ - പഠനമികവിനും മൂല്യാധിഷ്ഠിത വിദ്യാഭ്യാസത്തിനും ഒരുപോലെ പ്രാധാന്യം നൽകുന്നു.</p>
+                <a href="#about" class="btn">കൂടുതൽ അറിയുക</a>
+            </div>
+        </section>
+
+        <section id="about" class="section container">
+            <h2>ഞങ്ങളെക്കുറിച്ച്</h2>
+            <div class="about-content">
+                <p>IUHSS പറപ്പൂർ വർഷങ്ങളായി വിദ്യാഭ്യാസ മേഖലയിൽ തങ്ങളുടെ മികവ് തെളിയിച്ച സ്ഥാപനമാണ്. ഉന്നത നിലവാരമുള്ള അധ്യാപകരും ആധുനിക സൗകര്യങ്ങളോടും കൂടി വിദ്യാർത്ഥികളുടെ സർവതോന്മുഖമായ വളർച്ചയ്ക്ക് ഞങ്ങൾ പ്രാധാന്യം നൽകുന്നു.</p>
+                <p>എട്ട് മുതൽ പ്ലസ് ടു വരെയുള്ള ക്ലാസുകളിലായി ആയിരക്കണക്കിന് വിദ്യാർത്ഥികൾക്ക് ഞങ്ങളിവിടെ വിജ്ഞാനം പകർന്നു നൽകുന്നു.</p>
+                </div>
+        </section>
+
+        <section id="classes" class="section container">
+            <h2>ഞങ്ങളുടെ ക്ലാസുകൾ</h2>
+
+            <div id="highschool" class="class-section">
+                <h3>ഹൈസ്കൂൾ വിഭാഗം</h3>
+                <p>എട്ട്, ഒൻപത്, പത്ത് ക്ലാസുകളിലേക്ക് ഇംഗ്ലീഷ് മീഡിയം പഠന സൗകര്യം.</p>
+                <ul>
+                    <li>പരിചയസമ്പന്നരായ അധ്യാപകർ</li>
+                    <li>ആധുനിക പഠന രീതികൾ</li>
+                    <li>സഹപാഠ്യ പ്രവർത്തനങ്ങൾക്ക് പ്രാധാന്യം</li>
+                </ul>
+                </div>
+
+            <div id="highersecondary" class="class-section">
+                <h3>ഹയർ സെക്കൻഡറി വിഭാഗം (+1, +2)</h3>
+                <p>വിവിധ വിഷയങ്ങളിൽ മികച്ച കരിയർ രൂപീകരിക്കാൻ വിദ്യാർത്ഥികളെ പ്രാപ്തരാക്കുന്ന കോഴ്സുകൾ:</p>
+                <div class="course-list">
+                    <div class="course-card">
+                        <h4>കൊമേഴ്സ്</h4>
+                        <p>അക്കൗണ്ടൻസി, ബിസിനസ് സ്റ്റഡീസ്, ഇക്കണോമിക്സ്, കമ്പ്യൂട്ടർ ആപ്ലിക്കേഷൻ/മാത്‍സ്.</p>
+                        </div>
+                    <div class="course-card">
+                        <h4>സയൻസ്</h4>
+                        <p>ഫിസിക്സ്, കെമിസ്ട്രി, ബയോളജി, മാത്തമാറ്റിക്സ്/കമ്പ്യൂട്ടർ സയൻസ്.</p>
+                        </div>
+                    <div class="course-card">
+                        <h4>ഹ്യുമാനിറ്റീസ്</h4>
+                        <p>ഹിസ്റ്ററി, ഇക്കണോമിക്സ്, പൊളിറ്റിക്കൽ സയൻസ്, സോഷ്യോളജി/കംപ്യൂട്ടർ ആപ്ലിക്കേഷൻ.</p>
+                        </div>
+                </div>
+                </div>
+        </section>
+
+        <section id="facilities" class="section container">
+            <h2>പ്രധാന സൗകര്യങ്ങൾ</h2>
+            <div class="facilities-grid">
+                <div class="facility-item">
+                    <h3>ലൈബ്രറി</h3>
+                    <p>വിവിധ വിഷയങ്ങളിലുള്ള പുസ്തകങ്ങളും റഫറൻസ് ഗ്രന്ഥങ്ങളും.</p>
+                </div>
+                <div class="facility-item">
+                    <h3>ശാസ്ത്ര ലാബുകൾ</h3>
+                    <p>ഫിസിക്സ്, കെമിസ്ട്രി, ബയോളജി ലാബുകൾ.</p>
+                </div>
+                <div class="facility-item">
+                    <h3>കമ്പ്യൂട്ടർ ലാബ്</h3>
+                    <p>ആധുനിക കമ്പ്യൂട്ടറുകളും ഇന്റർനെറ്റ് സൗകര്യവും.</p>
+                </div>
+                <div class="facility-item">
+                    <h3>കളിക്കളങ്ങൾ</h3>
+                    <p>വിദ്യാർത്ഥികൾക്കായി വിശാലമായ കളിക്കളങ്ങൾ.</p>
+                </div>
+            </div>
+            </section>
+
+        <section id="gallery" class="section container">
+            <h2>ഗാലറി</h2>
+            <div class="gallery-grid">
+                <img src="placeholder-image1.jpg" alt="School Event 1">
+                <img src="placeholder-image2.jpg" alt="School Building">
+                <img src="placeholder-image3.alt" alt="Students in Lab">
+                </div>
+        </section>
+
+        <section id="contact" class="section container">
+            <h2>ബന്ധപ്പെടുക</h2>
+            <p><strong>IUHSS പറപ്പൂർ</strong></p>
+            <p>വിലാസം: പറപ്പൂർ, മലപ്പുറം ജില്ല, കേരളം</p>
+            <p>ഫോൺ: [നിങ്ങളുടെ ഫോൺ നമ്പർ]</p>
+            <p>ഇമെയിൽ: [നിങ്ങളുടെ ഇമെയിൽ വിലാസം]</p>
+            <p>നിങ്ങൾക്ക് എന്തെങ്കിലും അന്വേഷണങ്ങൾ ഉണ്ടെങ്കിൽ താഴെ പറയുന്ന ഫോം ഉപയോഗിക്കുക.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="നിങ്ങളുടെ പേര്" required>
+                <input type="email" placeholder="നിങ്ങളുടെ ഇമെയിൽ" required>
+                <textarea placeholder="നിങ്ങളുടെ സന്ദേശം" rows="5" required></textarea>
+                <button type="submit" class="btn">സന്ദേശം അയക്കുക</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 IUHSS പറപ്പൂർ. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#" aria-label="Instagram"><img src="instagram-icon.png" alt="Instagram"></a>
+                </div>
+        </div>
+    </footer>
+    <style>
+      /* Basic Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+/* Header */
+.main-header {
+    background-color: #0277bd; /* Deep blue for header */
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.main-header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.main-header .logo img {
+    margin-right: 10px;
+    border-radius: 50%; /* If you want a circular logo */
+}
+
+.main-header .logo h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.8em;
+}
+
+/* Navigation */
+.main-nav .nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav .nav-menu li {
+    margin-left: 25px;
+    position: relative; /* For dropdown */
+}
+
+.main-nav .nav-menu a {
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.main-nav .nav-menu a:hover {
+    color: #e0f2f7; /* Lighter blue on hover */
+    border-bottom: 2px solid #e0f2f7;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0277bd;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%; /* Position below the parent */
+    left: 0;
+}
+
+.dropdown-content li {
+    margin: 0; /* Reset margin for dropdown items */
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.dropdown-content a:hover {
+    background-color: #01579b; /* Darker blue on hover */
+    border-bottom: none; /* Remove border for dropdown items */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hamburger Toggle (Mobile) */
+.nav-toggle {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('placeholder-hero.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    height: 60vh; /* Make it take up more of the viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Sections */
+.section {
+    padding: 60px 0;
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+.section:nth-of-type(even) {
+    background-color: #f9f9f9;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    position: relative;
+    color: #0277bd;
+}
+
+.section h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #0277bd;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* About Section */
+.about-content {
+    text-align: justify;
+    font-size: 1.1em;
+}
+
+/* Classes Section */
+.class-section {
+    background-color: #f0f8ff;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.class-section h3 {
+    color: #01579b;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #a7d9f7;
+    padding-bottom: 10px;
+}
+
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.course-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    flex: 1 1 calc(33% - 40px); /* 3 cards per row, accounting for gap */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 280px; /* Minimum width for cards */
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.course-card h4 {
+    color: #28a745;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Facilities Section */
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.facility-item {
+    background-color: #e6ffe6; /* Light green */
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.facility-item h3 {
+    color: #28a745;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* Gallery Section */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Noto Sans Malayalam', sans-serif;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #2c3e50; /* Dark gray/blue for footer */
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.main-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.main-footer .social-links img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    filter: invert(1); /* Makes icons white */
+    transition: transform 0.3s ease;
+}
+
+.main-footer .social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-nav {
+        order: 3; /* Move nav below logo/toggle */
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .main-nav .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        display: none; /* Hidden by default on mobile */
+        text-align: center;
+        background-color: #0277bd;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    .main-nav .nav-menu.active {
+        display: flex; /* Show when active */
+    }
+
+    .main-nav .nav-menu li {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .main-nav .nav-menu a {
+        padding: 10px;
+        display: block;
+        border-bottom: none; /* Remove border from active hover */
+    }
+    
+    .main-nav .nav-menu a:hover {
+        background-color: #01579b; /* Darker background on hover */
+        border-bottom: none;
+    }
+
+    .nav-toggle {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    .hero-content h2 {
+        font-size: 2.2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .section h2 {
+        font-size: 2em;
+    }
+
+    .course-card {
+        flex: 1 1 calc(50% - 20px); /* 2 cards per row on tablets */
+    }
+
+    .main-footer .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header .logo h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 0.9em;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section h2 {
+        font-size: 1.8em;
+    }
+
+    .class-section h3 {
+        font-size: 1.5em;
+    }
+
+    .course-card {
+        flex: 1 1 100%; /* 1 card per row on mobile */
+    }
+
+    .facilities-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+}
+    </style>
+
+</body>
+</html>
